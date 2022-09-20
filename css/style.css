@@ -1,0 +1,279 @@
+/** Not allowed to change this initial CSS code **/
+body {
+	background: url(../img/12_col.gif) center top repeat-y;
+	background-size: 90%;
+}
+/*************************************************/
+ul{
+	list-style: none;
+}
+
+#nav, .content, .sidebar{
+	background-color: rgb(245, 245, 202);
+}
+
+/* ============================================================= */
+
+.main_container{
+	display: grid;
+	width: 89%;
+	min-height: 1200px;
+	margin: auto;
+	box-sizing: border-box;
+
+	grid-template-rows: 0.5fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(12, 1fr);
+	row-gap: 10px ;
+	column-gap: 2%;
+}
+
+#nav, .box1, .box2, .box3, .content, .sidebar, .footer, [class*='footer_'],
+.content div{
+	border: 1px solid black;
+}
+/* ================  Navigation Section ======================*/
+
+#nav{
+	grid-column: 1 / 13 ;
+	grid-row: 1 / 2;
+
+	display: flex;
+	align-items: center; 
+}
+
+#nav ul{
+    padding-inline-start: 1%;
+} 
+
+.left-section{
+	 /* background-color: aquamarine;  */
+	display: flex;
+	gap: 10px;
+}
+
+.right-section{
+	margin-left: auto;
+    margin-right: 1%;
+} 
+
+/* ================  Boxes Section ======================*/
+
+.box1{
+	grid-column: 1 / span 2 ;
+	grid-row: 2 / 3;
+}
+
+.box2{
+	grid-column: 3 / 11 ;
+	grid-row: 2 / 3;
+}
+
+.box3{
+	grid-column: 11 / 13 ;
+	grid-row: 2 / 3;
+}
+
+
+/*=============== Content and sidebar section ============*/
+
+.content{
+	grid-column: 1 / 10 ;
+	grid-row: 3 / 4;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+}
+
+.content div{
+	margin: 8px;
+	flex: 2 1 31%; 
+
+    min-height: 100px;
+    /* background-color: rgb(144, 144, 248); */
+}
+
+
+
+.sidebar{
+	grid-column: 10 / 13 ;
+	grid-row: 3 / 4;
+
+	min-height: 200px;
+
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sidebar div{
+    width: 80%;
+	margin: 20px auto 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/*===================== Footer section =========================*/
+
+.footer{
+	display: grid;
+	grid-column: 1 / 13 ;
+	grid-row: 4 / 5;
+
+    grid-template-columns: repeat(4, 1fr);
+	column-gap: 2%;
+	padding: 8px;
+}
+
+
+
+
+/*-------------------------------------------------------------
+***************************************************************
+*************************   MEDIA QUERIES  ********************
+***************************************************************
+--------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------
+/*                         Small desktops
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px)
+{
+	.main_container{
+		background-color: aqua;
+		opacity: 80%;		
+		grid-template-rows: 0.5fr 1fr 1.5fr 1fr;
+	}
+	
+	/*---------------------- Box sections --------------------*/
+
+	.box1{
+		grid-column: 1 / 4;
+	}
+
+	.box2{
+
+		grid-column: 4 / 10;
+	}
+
+	.box3{
+		grid-column: 10 / 13;
+	}
+
+	/*-------------- Content and sidebar section -------------*/
+
+	.content{
+		grid-column: 1 / 9;
+	}
+
+	.sidebar{
+		grid-column: 9 / 13;
+	}
+}
+
+
+/*-------------------------------------------------------------
+/*                          TABLETS  
+--------------------------------------------------------------*/ 
+
+@media screen and (max-width: 960px)
+{
+	.main_container{
+		background-color: rgb(142, 243, 159);
+		opacity: 80%;	
+		grid-template-rows: 0.5fr 1fr 4fr 2fr;
+	}
+
+	/*---------------------- Box sections --------------------*/
+
+	.box1{
+		grid-column: 1 / 5;
+	}
+
+	.box2{
+		grid-column: 5 / 9;	
+	}
+
+	.box3{
+		grid-column: 9 / 13;
+	}
+
+		/*-------------- Content and sidebar section -------------*/
+
+	.content{
+		grid-column: 1 / 7;
+
+		flex-direction: column;
+		flex-wrap: nowrap; 
+	}
+
+	.sidebar{
+		grid-column: 7 / 13;
+	}
+	
+	/*-------------------- Footer section ----------------*/
+
+	.footer{
+		grid-row: 4 / 6;	
+		grid-template-columns: 1fr 1fr;
+		column-gap: 2%; 
+		row-gap: 10px;
+	}
+}
+
+/*-------------------------------------------------------------
+/*                          MOBILES 
+--------------------------------------------------------------*/ 
+
+@media screen and (max-width: 768px)
+{
+
+	.main_container{
+		background-color: rgb(233, 243, 142);
+		opacity: 80%;
+		grid-template-rows: 1fr repeat(3,2fr) 6fr 3fr 3fr;
+	}
+
+	/*---------------------- Box sections --------------------*/
+
+	.box1{
+		grid-column: 1 / 13 ;
+		grid-row: 2 / 3;
+	}
+
+	.box2{
+		grid-column: 1 / 13 ;
+		grid-row: 3 / 4;
+	}
+
+	.box3{
+		grid-column: 1 / 13 ;
+		grid-row: 4 / 5;
+	} 
+
+	/*-------------- Content and sidebar section -------------*/
+
+ 	.content{
+		grid-column: 1 / 13 ;
+		grid-row: 5 / 6;
+	}
+
+	.sidebar{
+		grid-column: 1 / 13 ;
+		grid-row: 6 / 7;
+	}
+ 
+	/*-------------------- Footer section ----------------*/
+ 
+	.footer{
+		grid-row: 7 / 8;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, 1fr);	
+		padding: 4px;
+		row-gap: 6px;
+	} 
+}
