@@ -90,7 +90,7 @@ ul{
 	/* min-width: 250px; */
 	flex: 2 1 250px;
     min-height: 100px;
-	width: max(90%, 250px); 
+	/* width: max(90%, 250px);  */
     /* background-color: rgb(144, 144, 248); */
 }
 
