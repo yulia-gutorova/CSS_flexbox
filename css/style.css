@@ -86,9 +86,11 @@ ul{
 
 .content div{
 	margin: 8px;
-	flex: 2 1 31%; 
-
+	/* flex: 2 1 31%;  */
+	/* min-width: 250px; */
+	flex: 2 1 250px;
     min-height: 100px;
+	width: max(90%, 250px); 
     /* background-color: rgb(144, 144, 248); */
 }
 
@@ -206,9 +208,9 @@ ul{
 
 	.content{
 		grid-column: 1 / 7;
-
+/* 
 		flex-direction: column;
-		flex-wrap: nowrap; 
+		flex-wrap: nowrap;  */
 	}
 
 	.sidebar{
@@ -219,6 +221,7 @@ ul{
 
 	.footer{
 		grid-row: 4 / 6;	
+		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr;
 		column-gap: 2%; 
 		row-gap: 10px;
